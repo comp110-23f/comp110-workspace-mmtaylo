@@ -45,10 +45,10 @@ if guessed_character == str(guessed_word[4]):
 
 # defining the amount of correct_characters in guessed_character
 if correct_characters < 1:
-    print("No instances of " + guessed_character + " in " + guessed_word)
+    print("No instances of " + guessed_character + " found in " + guessed_word)
 
 if correct_characters == 1:
-    print("1 instance of " + guessed_character + " in " + guessed_word)
+    print("1 instance of " + guessed_character + " found in " + guessed_word)
 
 if correct_characters >= 2:
-    print(str(correct_characters) + " instances of " + guessed_character + " in " + guessed_word)
+    print(str(correct_characters) + " instances of " + guessed_character + " found in " + guessed_word)
