@@ -5,6 +5,7 @@ __author__ = "730578652"
 secret_word: str = "python"
 
 # declaring all of my variables
+
 white_box: str = "\U00002B1C"
 green_box: str = "\U0001F7E9"
 yellow_box: str = "\U0001F7E8"
