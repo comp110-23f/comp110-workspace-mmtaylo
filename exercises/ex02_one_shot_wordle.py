@@ -8,6 +8,7 @@ secret_word: str = "python"
 white_box: str = "\U00002B1C"
 green_box: str = "\U0001F7E9"
 yellow_box: str = "\U0001F7E8"
+
 check_idx: int = 0
 altcheck_idx: int = 0
 guess_track: str = ""
