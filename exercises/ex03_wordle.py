@@ -16,7 +16,6 @@ def contains_char(search_for_parameter: str, search_char: str) -> bool:
 
 def emojified(guess: str, secret_word: str) -> str:
     """Function meant to return a str with colored emojis to test closeness of a guessed word and a secret stored word."""
-    
     assert len(guess) == len(secret_word)                                                           # making sure that the length of the guessed word is the same as the length of the secret word
 
     white_box: str = "\U00002B1C"
@@ -38,7 +37,6 @@ def emojified(guess: str, secret_word: str) -> str:
 
 def input_guess(expected_length: int) -> str:
     """Function meant to prompt the user to enter a word of a specific number of characters."""
-    
     expected_guess: str = input(f"Enter a {expected_length} character word: ")                      # the variable "expected_guess" is defined as a string that you get from the question "enter a _ character word", with the integer coming from the parameter "expected_length"
     
     while len(expected_guess) != expected_length:                                                   # when the length of the expected_guess/perviously defined integer is not the length of the expected_length parameter...
