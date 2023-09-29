@@ -2,8 +2,8 @@
 
 __author__ = "730578652"
 
-def contains_char(search_for_parameter = str, search_char = str) -> bool:
-    """Function meant to see if an entered character is found in an entered word at any index"""
+def contains_char(search_for_parameter: str, search_char: str) -> bool:
+    """Function meant to see if an entered character is found in an entered word at any index."""
     assert len(search_char) == 1                                                                    # making sure that the length of parameter 2 (search_char) is 1/a single character
     
     check_idx: int = 0                                                                              # initializing the index checker to 0
@@ -14,8 +14,8 @@ def contains_char(search_for_parameter = str, search_char = str) -> bool:
         check_idx = check_idx + 1                                                                   # moving on to the next index if the current index is not equal to the enterd character
     return False                                                                                    # if the entered character is not in the first parameter at all
 
-def emojified(guess = str, secret_word = str) -> str:
-    """Function meant to return a str with colored emojis to test closeness of a guessed word and a secret stored word"""
+def emojified(guess: str, secret_word: str) -> str:
+    """Function meant to return a str with colored emojis to test closeness of a guessed word and a secret stored word."""
     
     assert len(guess) == len(secret_word)                                                           # making sure that the length of the guessed word is the same as the length of the secret word
 
@@ -36,8 +36,8 @@ def emojified(guess = str, secret_word = str) -> str:
         check_idx = check_idx + 1                                                                   # check for the next index
     return result                                                                                   # return the result string after checking all of the indexes of the parameters!
 
-def input_guess(expected_length = int) -> str:
-    """Function meant to prompt the user to enter a word of a specific number of characters"""
+def input_guess(expected_length: int) -> str:
+    """Function meant to prompt the user to enter a word of a specific number of characters."""
     
     expected_guess: str = input(f"Enter a {expected_length} character word: ")                      # the variable "expected_guess" is defined as a string that you get from the question "enter a _ character word", with the integer coming from the parameter "expected_length"
     
@@ -46,7 +46,7 @@ def input_guess(expected_length = int) -> str:
     return expected_guess                                                                           # after the while loop is complete (aka once the user inputs a guess that is the correct amount of characters), return the proper expected_guess
 
 def main() -> None:
-    """The entrypoint of the program and main game loop""" 
+    """The entrypoint of the program and main game loop."""
     secret_word: str = "codes"                                                                      # the secret word that the user is trying to guess
     turn_number: int = 1                                                                            # variable to keep track of the turn number for the user
 
