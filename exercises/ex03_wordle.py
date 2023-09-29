@@ -2,6 +2,7 @@
 
 __author__ = "730578652"
 
+
 def contains_char(search_for_parameter: str, search_char: str) -> bool:
     """Function meant to see if an entered character is found in an entered word at any index."""
     assert len(search_char) == 1                                                                    # making sure that the length of parameter 2 (search_char) is 1/a single character
@@ -13,6 +14,7 @@ def contains_char(search_for_parameter: str, search_char: str) -> bool:
             return True
         check_idx = check_idx + 1                                                                   # moving on to the next index if the current index is not equal to the enterd character
     return False                                                                                    # if the entered character is not in the first parameter at all
+
 
 def emojified(guess: str, secret_word: str) -> str:
     """Function meant to return a str with colored emojis to test closeness of a guessed word and a secret stored word."""
@@ -35,6 +37,7 @@ def emojified(guess: str, secret_word: str) -> str:
         check_idx = check_idx + 1                                                                   # check for the next index
     return result                                                                                   # return the result string after checking all of the indexes of the parameters!
 
+
 def input_guess(expected_length: int) -> str:
     """Function meant to prompt the user to enter a word of a specific number of characters."""
     expected_guess: str = input(f"Enter a {expected_length} character word: ")                      # the variable "expected_guess" is defined as a string that you get from the question "enter a _ character word", with the integer coming from the parameter "expected_length"
@@ -42,6 +45,7 @@ def input_guess(expected_length: int) -> str:
     while len(expected_guess) != expected_length:                                                   # when the length of the expected_guess/perviously defined integer is not the length of the expected_length parameter...
         expected_guess = (input(f"That wasn't {expected_length} chars! Try again: "))               # prompt the user to input another guess that should contain the correct amount of characters
     return expected_guess                                                                           # after the while loop is complete (aka once the user inputs a guess that is the correct amount of characters), return the proper expected_guess
+
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
@@ -59,6 +63,7 @@ def main() -> None:
         if turn_number > 6:                                                                         # if the user has not gotten the guess in six...
             print("X/6 - Sorry, try again tomorrow!")                                               # printing a failure statement
             return None                                                                             # closing out main
-        
+
+
 if __name__ == "__main__":
     main()                                                                                          # running main...
