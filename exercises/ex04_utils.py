@@ -2,15 +2,18 @@
 
 __author__ = "730578652"
 
+
 def all(all_list: list[int], parameter2: int) -> bool:
-    """Function that returns a bool if the numbers in a list (list1) are the same as the para2"""
+    """Function that returns a bool if the numbers in a list (list1) are the same as the para2."""
     i: int = 0
-    while len(all_list) > i:
+    while len(all_list) >= i:
+        True == False
         if parameter2 == all_list[i]:
             i += 1
         else:
             return False
     return True
+
 
 def max(max_list: list[int]) -> int:
     """Function that returns the largest integer in a list or a ValueError if list is empty."""
@@ -25,6 +28,7 @@ def max(max_list: list[int]) -> int:
             i += 1
             alti = 1
     return max_list[i]
+
 
 def is_equal(list1: list[int], list2: list[int]) -> bool:
     """Function that returns True if two lists are the same."""
