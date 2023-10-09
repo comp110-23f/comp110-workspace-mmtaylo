@@ -7,7 +7,6 @@ def all(all_list: list[int], parameter2: int) -> bool:
     """Function that returns a bool if the numbers in a list (list1) are the same as the para2."""
     i: int = 0
     while len(all_list) >= i:
-        True == False
         if parameter2 == all_list[i]:
             i += 1
         else:
