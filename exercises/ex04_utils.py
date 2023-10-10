@@ -39,4 +39,3 @@ def is_equal(list1: list[int], list2: list[int]) -> bool:
         return True
     else:
         return False
-
