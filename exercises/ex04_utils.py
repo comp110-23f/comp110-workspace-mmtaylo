@@ -6,6 +6,10 @@ __author__ = "730578652"
 def all(all_list: list[int], parameter2: int) -> bool:
     """Function that returns a bool if the numbers in a list (list1) are the same as the para2."""
     i: int = 0
+
+    if len(all_list) == 0:
+        return False
+
     while len(all_list) > i:
         if parameter2 == all_list[i]:
             i += 1
@@ -35,3 +39,4 @@ def is_equal(list1: list[int], list2: list[int]) -> bool:
         return True
     else:
         return False
+
