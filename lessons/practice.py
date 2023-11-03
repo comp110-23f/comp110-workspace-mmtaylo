@@ -1,6 +1,5 @@
 """Demonstrates me trying my best."""
-x: str = "else"
-if len(x) == 1:
-    print("boooo")
-else:
-    print(x)
+
+pets: list[str] = ["Louie", "Bo", "Bear"]
+for items in pets:
+    print(f"Good Boy, {items}!")
