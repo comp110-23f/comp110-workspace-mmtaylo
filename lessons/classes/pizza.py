@@ -16,6 +16,7 @@ class Pizza:
     toppings: int
     gluten_free: bool
 
+
     def __init__(self, inp_size: str, inp_toppings: int, inp_gluten_free: bool):
         """My constructor."""
         # saying that for this Pizza instance (self), 
@@ -39,11 +40,12 @@ class Pizza:
     
 
     def add_toppings(self, num_toppings: int):
-        """Function to update an attribute/add toppings to existing pizza."""
+        """Method to update an attribute/add toppings to existing pizza."""
         self.toppings += num_toppings
+        return self.toppings
 
 
     def make_new_pizza_add_toppings(self, num_toppings: int) -> Pizza:
         """Make a new pizza with existing pizza's propertieis and add toppings."""
-        new_pizza: Pizza = Pizza(self.size, self.toppings, self.gluten_free)
+        new_pizza: Pizza = Pizza(self.size, self.toppings + num_toppings, self.gluten_free)
         return new_pizza
