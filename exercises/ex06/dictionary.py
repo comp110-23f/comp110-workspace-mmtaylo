@@ -1,41 +1,46 @@
 """EX06 dictionary functions."""
 
-__author__: "730578652"
+__author__ = "730578652"
 
 
 def invert(my_dict: dict[str, str]) -> dict[str, str]:
-    """Function that raises a KeyError if there are more than one of the same keys."""
+    """Function that inverts the keys and values in a dict; also raises a KeyError if there are more than one of the same keys."""
     key_storage: list[str] = list()
     val_storage: list[str] = list()
+
     for key in my_dict:
         key_storage += key
         val_storage += my_dict[key]
-    my_dict: dict[str, str] = {}
+
+    the_dict: dict[str, str] = {}
+
     for i in range(0, len(key_storage)):
         key = val_storage[i]
-        my_dict[key] = key_storage[i]
-    return my_dict
+        if key in my_dict:
+            raise KeyError("This key is already in this dictionary! Try again... ")
+        the_dict[key] = key_storage[i]
+    
+    return the_dict
 
 
-def favorite_colors(my_dict: dict[str, str]) -> str:
+def favorite_color(my_dict: dict[str, str]) -> str:
     """Function that returns the color that appears in the dict the most often."""
-    color_list: list[str] = my_dict.values()
-    color_storage: dict[str, int] = {}
-    most_freq_color: str = ''
-    max_value: int = 0
+    color_dict: dict[str, int] = {}
+    pop_color_frequency: int = 0
+    pop_color: str = ""
 
-    for value in color_list:
-        if value in color_storage:
-            color_storage[value] += 1
+    for key in my_dict:
+        if my_dict[key] in color_dict:
+            color_dict[my_dict[key]] += 1
         else:
-            color_storage[value] = 1
+            color_dict[my_dict[key]] = 1
 
-    for color_storage[value] in color_storage:
-        if color_storage[value] > max_value:
-            max_value == color_storage[value]
-            
+    for color in color_dict:
+        if color_dict[color] > pop_color_frequency:
+            pop_color_frequency = color_dict[color]
+            pop_color = color
 
-    return max_value
+    return pop_color
 
 
 def count(my_list: list[str]) -> dict[str, int]:
@@ -52,24 +57,23 @@ def count(my_list: list[str]) -> dict[str, int]:
 
 
 def alphabetizer(my_list: list[str]) -> dict[str, list[str]]:
-    """"""
-    i: int = 0
-    letter_storage: list[str] = ()
-    my_letter: str = my_list[0]
+    """Function that takes a dict and produces an alphabetized version in a new dict."""
+    my_dict: dict[str, list[str]] = {}
 
-    while i < len(my_list):
-        letter_storage += my_letter[0]
-        i += 1
-
-    return letter_storage
-
-
-
-
-def update_attendance(attendance: dict[str, list[str]], day: str, student: str) -> dict[str, list[str]]:
-    """"""
+    for item in my_list:
+        item = item.lower()
+        if item[0] in my_dict:
+            my_dict[item[0]].append(item)
+        else:
+            my_dict[item[0]] = [item]
+    
+    return my_dict
     
 
-list = ['cat', 'car', 'apple', 'ant', 'sugar', 'sweet']
-x: dict[str, list[str]] = alphabetizer(list)
-print(x)
+def update_attendance(attendance: dict[str, list[str]], day: str, student: str) -> dict[str, list[str]]:
+    """Function that updates an attendance roster."""
+    if day in attendance:
+        attendance[day].append(student)
+    else: 
+        attendance[day] = [student]
+    return attendance
