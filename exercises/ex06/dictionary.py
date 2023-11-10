@@ -9,16 +9,16 @@ def invert(my_dict: dict[str, str]) -> dict[str, str]:
     val_storage: list[str] = list()
 
     for key in my_dict:
-        key_storage += key
-        val_storage += my_dict[key]
+        key_storage.append(key)
+        val_storage.append(my_dict[key])
 
     the_dict: dict[str, str] = {}
 
     for i in range(0, len(key_storage)):
-        key = val_storage[i]
-        if key in my_dict:
+        if val_storage[i] in the_dict:
             raise KeyError("This key is already in this dictionary! Try again... ")
-        the_dict[key] = key_storage[i]
+        miau = val_storage[i]
+        the_dict[miau] = key_storage[i]
     
     return the_dict
 
@@ -61,11 +61,10 @@ def alphabetizer(my_list: list[str]) -> dict[str, list[str]]:
     my_dict: dict[str, list[str]] = {}
 
     for item in my_list:
-        item = item.lower()
-        if item[0] in my_dict:
-            my_dict[item[0]].append(item)
+        if item[0].lower() in my_dict:
+            my_dict[item[0].lower()].append(item)
         else:
-            my_dict[item[0]] = [item]
+            my_dict[item[0].lower()] = [item]
     
     return my_dict
     
@@ -73,7 +72,8 @@ def alphabetizer(my_list: list[str]) -> dict[str, list[str]]:
 def update_attendance(attendance: dict[str, list[str]], day: str, student: str) -> dict[str, list[str]]:
     """Function that updates an attendance roster."""
     if day in attendance:
-        attendance[day].append(student)
+        if student not in attendance[day]:
+            attendance[day].append(student)
     else: 
         attendance[day] = [student]
     return attendance
