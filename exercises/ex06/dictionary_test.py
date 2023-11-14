@@ -2,7 +2,7 @@
 
 __author__ = "730578652"
 import pytest
-from dictionary import invert, favorite_color, count, alphabetizer, update_attendance
+from exercises.ex06.dictionary import invert, favorite_color, count, alphabetizer, update_attendance
 
 
 def test_invert_empty_arguments() -> None:
